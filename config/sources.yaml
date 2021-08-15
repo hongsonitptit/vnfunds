@@ -1,20 +1,20 @@
 stock_funds:
-  - VCBF-BCF : https://www.vcbf.com/quy-mo/cac-quy-mo/quy-dau-tu-co-phieu-hang-dau-vcbf/#?tabid=113
-  - VEOF : https://wm.vinacapital.com/quy-dau-tu-co-phieu-hung-thinh-veof
-  - VESAF : https://wm.vinacapital.com/quy-dau-tu-co-phieu-tiep-can-thi-truong-viet-nam-vesaf
-  - BVFED : https://baovietfund.com.vn/san-pham/BVFED#invest-effects
-  - BVPF : https://baovietfund.com.vn/san-pham/BVPF#invest-effects
-  - DCDS : https://dragoncapital.com.vn/quy-dau-tu-chung-khoan-nang-dong-dc-dcds/dcds-ket-qua-hoat-dong/
-  - VIBF : https://wm.vinacapital.com/quy-dau-tu-can-bang-tue-sang-vinacapital-vibf
-  - SSI-SCA : https://www.ssi.com.vn/ssiam/nav-fund/download/27/all?filter_nav_fund_code=ASSETMANAGEMENT-THONGTINTQ-SSISCA
+  # - VCBF-BCF : https://www.vcbf.com/quy-mo/cac-quy-mo/quy-dau-tu-co-phieu-hang-dau-vcbf/#?tabid=113
+  # - VEOF : https://wm.vinacapital.com/quy-dau-tu-co-phieu-hung-thinh-veof
+  # - VESAF : https://wm.vinacapital.com/quy-dau-tu-co-phieu-tiep-can-thi-truong-viet-nam-vesaf
+  # - BVFED : https://baovietfund.com.vn/san-pham/BVFED#invest-effects
+  # - BVPF : https://baovietfund.com.vn/san-pham/BVPF#invest-effects
+  # - DCDS : https://dragoncapital.com.vn/quy-dau-tu-chung-khoan-nang-dong-dc-dcds/dcds-ket-qua-hoat-dong/
+  # - VIBF : https://wm.vinacapital.com/quy-dau-tu-can-bang-tue-sang-vinacapital-vibf
+  # - SSI-SCA : https://www.ssi.com.vn/ssiam/nav-fund/download/27/all?filter_nav_fund_code=ASSETMANAGEMENT-THONGTINTQ-SSISCA
   - DFVN-CAF : https://www.dfvn.com.vn/vi/investment-solutions/fund-management/dfvn-caf/fund-performance
-bond_funds:
-  - 
-balance_funds:
-  - VCBF-TBF : https://www.vcbf.com/quy-mo/cac-quy-mo/quy-dau-tu-can-bang-chien-luoc-vcbf/#?tabid=102
-  - DCBC : https://dragoncapital.com.vn/quy-dau-tu-doanh-nghiep-hang-dau-dc-dcbc/dcbc-ket-qua-hoat-dong/
-base_indexes:
-  - VNINDEX : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=vn_index&date_started=01/01/2000
-  - VN30 : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=tracking_index_67&date_started=01/01/2000
-  - VN50 : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=tracking_index_29&date_started=01/01/2000
-  - VNFIN-LEAD : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=tracking_index_45&date_started=01/01/2000
+# bond_funds:
+#   - 
+# balance_funds:
+#   - VCBF-TBF : https://www.vcbf.com/quy-mo/cac-quy-mo/quy-dau-tu-can-bang-chien-luoc-vcbf/#?tabid=102
+#   - DCBC : https://dragoncapital.com.vn/quy-dau-tu-doanh-nghiep-hang-dau-dc-dcbc/dcbc-ket-qua-hoat-dong/
+# base_indexes:
+#   - VNINDEX : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=vn_index&date_started=01/01/2000
+#   - VN30 : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=tracking_index_67&date_started=01/01/2000
+#   - VN50 : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=tracking_index_29&date_started=01/01/2000
+#   - VNFIN-LEAD : https://www.ssi.com.vn/ssiam/hieu-qua-dau-tu-quy/compare-chart?page_id=17&page_compare_id=tracking_index_45&date_started=01/01/2000
