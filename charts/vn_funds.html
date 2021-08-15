@@ -1,4 +1,4 @@
-<!-- click to view https://raw.githack.com/hongsonitptit/vnfunds_data/main/test.html -->
+<!-- click to view https://raw.githack.com/hongsonitptit/vnfunds_data/main/charts/vn_funds.html -->
 <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
 <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
 
@@ -123,14 +123,14 @@
         console.log(global_symbols);
         for (i in data) {
             symbol = data[i];
-            url = "https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/" + symbol + ".json";
+            url = "https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/data/" + symbol + ".json";
             console.log(url);
             Highcharts.getJSON(url, success);
         }
     }
 
     Highcharts.getJSON(
-        'https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/symbols.json',
+        'https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/data/symbols.json',
         test
     );
 </script>
