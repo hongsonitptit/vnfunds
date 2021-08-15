@@ -18,7 +18,7 @@ sentry_sdk.init(
 
 setup_logging()
 CUR_DIR = os.path.dirname(__file__)
-DATA_OUTPUT_PATH = os.path.expanduser('~/git/vnfunds_data')
+DATA_OUTPUT_PATH = os.path.expanduser('~/git/vnfunds_data/data')
 
 
 def write_csv_data(name, data, type):
