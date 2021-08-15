@@ -59,8 +59,11 @@ def main():
         url = value[URL_TAG]
         type = value[TYPE_TAG]
         parser = ParserFactory.get_parser(symbol, type, url)
-        price_history = parser.get_data()
-        write_json_data(symbol, price_history, type)
+        try:
+            price_history = parser.get_data()
+            write_json_data(symbol, price_history, type)
+        except Exception as e:
+            logger.error(f"Cannot parse data for {symbol} from {url} . Error = {e}")
     create_readme(config)
     logger.info("Done")
 
