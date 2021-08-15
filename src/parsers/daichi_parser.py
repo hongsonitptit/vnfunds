@@ -22,16 +22,17 @@ class DaichiParser(BaseParser):
             logger.info("Page is loaded!")
 
             script = """
-            var data = charts[3252]
-            var chartData = []
+            var last_key = Object.keys(charts)[Object.keys(charts).length-1];
+            var data = charts[last_key];
+            var chartData = [];
             for (let i=1; i<data.length; i++) {
-                item = data[i]
-                var d = new Date(item[0]*1000)
+                item = data[i];
+                var d = new Date(item[0]*1000);
                 day = d.getDate();
                 month = d.getMonth() + 1;
                 year = d.getFullYear();
-                price = Math.floor(item[7])
-                chartData.push(day+ "/" + month + "/" +  year + "," + price)
+                price = Math.floor(item[7]);
+                chartData.push(day+ "/" + month + "/" +  year + "," + price);
             }
             return chartData;
 
