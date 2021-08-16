@@ -29,7 +29,8 @@
 <script>
     var seriesOptions = [],
         seriesCounter = 0,
-        global_symbols = [];
+        global_symbols = [],
+        selected_groups = ["base_indexes", "stock_funds"];
 
     /**
      * Create the chart when all data is loaded
@@ -102,6 +103,7 @@
         console.log(global_symbols);
         let url = this.url;
         let file_name = url.split('/').pop();
+        let type = url.split('/').pop();
         let symbol = file_name.split('.')[0];
         var i = global_symbols.indexOf(symbol);
         seriesOptions[i] = {
@@ -119,12 +121,23 @@
     }
 
     function get_symbols(data) {
-        global_symbols = data;
-        console.log(global_symbols);
-        for (i in data) {
-            symbol = data[i];
-            url = "https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/data/" + symbol + ".json";
-            console.log(url);
+        // global_symbols = data;
+        // console.log(global_symbols);
+        // init global symbols
+        let list_url = [];
+        let url_prefix = "https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/data/";
+        for (group in data) {
+            if (selected_groups.includes(group)) {
+                let symbols = data[group];
+                global_symbols = global_symbols.concat(symbols)
+                for (symbol in symbols) {
+                    list_url.push(url_prefix + group + "/" + symbol + ".json")
+                }
+            }
+        }
+
+        // get data and draw chart
+        for (url in list_url) {
             Highcharts.getJSON(url, success);
         }
     }
