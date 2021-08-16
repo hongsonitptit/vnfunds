@@ -64,15 +64,15 @@ def create_list_symbols(config):
 
 def main():
     config = get_config()
-    # for symbol, value in config.items():
-    #     url = value[URL_TAG]
-    #     type = value[TYPE_TAG]
-    #     parser = ParserFactory.get_parser(symbol, type, url)
-    #     try:
-    #         price_history = parser.get_data()
-    #         write_json_data(symbol, price_history, type)
-    #     except Exception as e:
-    #         logger.error(f"Cannot parse data for {symbol} from {url} . Error = {e}")
+    for symbol, value in config.items():
+        url = value[URL_TAG]
+        type = value[TYPE_TAG]
+        parser = ParserFactory.get_parser(symbol, type, url)
+        try:
+            price_history = parser.get_data()
+            write_json_data(symbol, price_history, type)
+        except Exception as e:
+            logger.error(f"Cannot parse data for {symbol} from {url} . Error = {e}")
     create_list_symbols(config)
     logger.info("Done")
 
