@@ -1,2 +1,5 @@
-# VN Funds
-https://raw.githack.com/hongsonitptit/vnfunds_data/main/charts/vn_funds.html
+# VN Stock Funds
+https://raw.githack.com/hongsonitptit/vnfunds_data/main/charts/stock_funds.html
+
+# VN Balance Funds
+https://raw.githack.com/hongsonitptit/vnfunds_data/main/charts/balance_funds.html

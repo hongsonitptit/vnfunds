@@ -68,35 +68,6 @@
             series: seriesOptions
         });
 
-        Highcharts.stockChart('container2', {
-
-            // show legend
-            legend: {
-                enabled: true
-            },
-
-            // show grid line in y axis
-            yAxis: {
-                labels: {
-                    formatter: function() {
-                        return (this.value > 0 ? ' + ' : '') + this.value + '%';
-                    }
-                }
-            },
-
-            plotOptions: {
-                series: {
-                    compare: 'percent'
-                }
-            },
-
-            tooltip: {
-                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
-                valueDecimals: 0
-            },
-
-            series: seriesOptions
-        });
     }
 
     function success(data) {
@@ -121,23 +92,22 @@
     }
 
     function get_symbols(data) {
-        // global_symbols = data;
-        // console.log(global_symbols);
-        // init global symbols
         let list_url = [];
         let url_prefix = "https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/data/";
         for (group in data) {
             if (selected_groups.includes(group)) {
                 let symbols = data[group];
                 global_symbols = global_symbols.concat(symbols)
-                for (symbol in symbols) {
-                    list_url.push(url_prefix + group + "/" + symbol + ".json")
+                for (i in symbols) {
+                    list_url.push(url_prefix + group + "/" + symbols[i] + ".json")
                 }
             }
         }
 
         // get data and draw chart
-        for (url in list_url) {
+        for (i in list_url) {
+            let url = list_url[i];
+            console.log(url);
             Highcharts.getJSON(url, success);
         }
     }

@@ -1,0 +1,118 @@
+<!-- click to view https://raw.githack.com/hongsonitptit/vnfunds_data/main/charts/vn_funds.html -->
+<link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
+<link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<!-- provide fullscreen option -->
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<!-- provide getJSON -->
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<!-- display label in line -->
+<!-- <script src="https://code.highcharts.com/modules/series-label.js"></script> -->
+<script src="https://code.highcharts.com/stock/indicators/indicators-all.js"></script>
+<script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+<script src="https://code.highcharts.com/modules/annotations-advanced.js"></script>
+<script src="https://code.highcharts.com/modules/price-indicator.js"></script>
+<script src="https://code.highcharts.com/modules/stock-tools.js"></script>
+<script src="https://code.highcharts.com/modules/full-screen.js"></script>
+<div id="container1"></div>
+<div id="container2"></div>
+
+<style>
+    #container {
+        max-width: 800px;
+        height: 400px;
+        margin: 1em auto;
+    }
+</style>
+
+<script>
+    var seriesOptions = [],
+        seriesCounter = 0,
+        global_symbols = [],
+        selected_groups = ["base_indexes", "balance_funds"];
+
+    /**
+     * Create the chart when all data is loaded
+     * @returns {undefined}
+     */
+    function createChart() {
+
+        Highcharts.stockChart('container1', {
+
+            // show legend
+            legend: {
+                enabled: true
+            },
+
+            // show grid line in y axis
+            yAxis: {
+                labels: {
+                    formatter: function() {
+                        return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                    }
+                }
+            },
+
+            plotOptions: {
+                series: {
+                    compare: 'percent'
+                }
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                valueDecimals: 0
+            },
+
+            series: seriesOptions
+        });
+    }
+
+    function success(data) {
+        console.log(global_symbols);
+        let url = this.url;
+        let file_name = url.split('/').pop();
+        let type = url.split('/').pop();
+        let symbol = file_name.split('.')[0];
+        var i = global_symbols.indexOf(symbol);
+        seriesOptions[i] = {
+            name: symbol,
+            data: data
+        };
+
+        // As we're loading the data asynchronously, we don't know what order it
+        // will arrive. So we keep a counter and create the chart when all the data is loaded.
+        seriesCounter += 1;
+
+        if (seriesCounter === global_symbols.length) {
+            createChart();
+        }
+    }
+
+    function get_symbols(data) {
+        let list_url = [];
+        let url_prefix = "https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/data/";
+        for (group in data) {
+            if (selected_groups.includes(group)) {
+                let symbols = data[group];
+                global_symbols = global_symbols.concat(symbols)
+                for (i in symbols) {
+                    list_url.push(url_prefix + group + "/" + symbols[i] + ".json")
+                }
+            }
+        }
+
+        // get data and draw chart
+        for (i in list_url) {
+            let url = list_url[i];
+            console.log(url);
+            Highcharts.getJSON(url, success);
+        }
+    }
+
+    Highcharts.getJSON(
+        'https://raw.githubusercontent.com/hongsonitptit/vnfunds_data/main/data/symbols.json',
+        get_symbols
+    );
+</script>
