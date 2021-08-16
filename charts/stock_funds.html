@@ -15,13 +15,13 @@
 <script src="https://code.highcharts.com/modules/price-indicator.js"></script>
 <script src="https://code.highcharts.com/modules/stock-tools.js"></script>
 <script src="https://code.highcharts.com/modules/full-screen.js"></script>
-<div id="container1"></div>
-<div id="container2"></div>
+<div id="container"></div>
 
 <style>
     #container {
-        max-width: 800px;
-        height: 400px;
+        /* max-width: 800px; */
+        width: 100%;
+        height: 100%;
         margin: 1em auto;
     }
 </style>
@@ -38,7 +38,7 @@
      */
     function createChart() {
 
-        Highcharts.stockChart('container1', {
+        Highcharts.stockChart('container', {
 
             // show legend
             legend: {
