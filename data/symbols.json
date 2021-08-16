@@ -1,17 +1,23 @@
 {
-    "BVFED": "stock_funds",
-    "BVPF": "stock_funds",
-    "DCBC": "stock_funds",
-    "DCDS": "balance_funds",
-    "DFVN-CAF": "stock_funds",
-    "SSI-SCA": "stock_funds",
-    "VCBF-BCF": "stock_funds",
-    "VCBF-TBF": "balance_funds",
-    "VEOF": "stock_funds",
-    "VESAF": "stock_funds",
-    "VIBF": "balance_funds",
-    "VN30": "base_indexes",
-    "VN50": "base_indexes",
-    "VNFIN-LEAD": "base_indexes",
-    "VNINDEX": "base_indexes"
+    "balance_funds": [
+        "VCBF-TBF",
+        "VIBF",
+        "DCDS"
+    ],
+    "base_indexes": [
+        "VNINDEX",
+        "VN30",
+        "VN50",
+        "VNFIN-LEAD"
+    ],
+    "stock_funds": [
+        "VCBF-BCF",
+        "VEOF",
+        "VESAF",
+        "DCBC",
+        "BVFED",
+        "BVPF",
+        "DFVN-CAF",
+        "SSI-SCA"
+    ]
 }
