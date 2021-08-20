@@ -1,5 +1,5 @@
 #!/bin/bash
-CUR_DIR=`pwd`
+CUR_DIR=`dirname $0`
 cd $CUR_DIR/../src
 source activate dev
 # craw data
